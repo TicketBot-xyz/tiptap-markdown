@@ -614,7 +614,11 @@ ${element.innerHTML}
     addStorage() {
       return {
         markdown: {
-          serialize: prosemirrorMarkdown.defaultMarkdownSerializer.marks.strong,
+          serialize: {
+            open: "**",
+            close: "**",
+            expelEnclosingWhitespace: true
+          },
           parse: {
             // handled by markdown-it
           }

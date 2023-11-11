@@ -13,7 +13,7 @@ export default Bold.extend({
     addStorage() {
         return {
             markdown: {
-                serialize: defaultMarkdownSerializer.marks.strong,
+                serialize: {open: '**', close: '**', expelEnclosingWhitespace: true},
                 parse: {
                     // handled by markdown-it
                 }
