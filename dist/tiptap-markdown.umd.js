@@ -698,7 +698,29 @@ ${element.innerHTML}
       };
     }
   });
-  const markdownExtensions = [Blockquote$1, BulletList$1, CodeBlock$1, HardBreak$1, Heading$1, HorizontalRule$1, HTMLNode, Image$1, ListItem$1, OrderedList$1, Paragraph$1, Table$1, TaskItem$1, TaskList$1, Text$1, Bold$1, Code$1, HTMLMark, Italic$1, Link$1, Strike$1];
+  const Underline = core.Mark.create({
+    name: "underline"
+  });
+  const Underline$1 = Underline.extend({
+    /**
+     * @return {{markdown: MarkdownMarkSpec}}
+     */
+    addStorage() {
+      return {
+        markdown: {
+          serialize: {
+            open: "__",
+            close: "__",
+            expelEnclosingWhitespace: true
+          },
+          parse: {
+            // handled by markdown-it
+          }
+        }
+      };
+    }
+  });
+  const markdownExtensions = [Blockquote$1, BulletList$1, CodeBlock$1, HardBreak$1, Heading$1, HorizontalRule$1, HTMLNode, Image$1, ListItem$1, OrderedList$1, Paragraph$1, Table$1, TaskItem$1, TaskList$1, Text$1, Bold$1, Code$1, HTMLMark, Italic$1, Link$1, Strike$1, Underline$1];
   function getMarkdownSpec(extension) {
     var _extension$storage, _markdownExtensions$f;
     const markdownSpec = (_extension$storage = extension.storage) === null || _extension$storage === void 0 ? void 0 : _extension$storage.markdown;

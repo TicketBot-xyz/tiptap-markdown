@@ -20,6 +20,7 @@ import HTMLMark from "./marks/html";
 import Italic from "./marks/italic";
 import Link from "./marks/link";
 import Strike from "./marks/strike";
+import Underline from "./marks/underline";
 
 
 export default [
@@ -45,4 +46,5 @@ export default [
     Italic,
     Link,
     Strike,
+    Underline,
 ]
